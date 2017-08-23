@@ -1,0 +1,36 @@
+<div class="image-gallery-container" [hidden]="!isLightboxOpen">
+    <div class="image-gallery-lightbox">
+    <div #lightBoxImage class="image-view-rss" [@ImageTransform]="imageState">
+    <img [hidden]="loading" [ngDraggable]="isImageDraggable" [zoomFactor]="zoomFactor" [imageState]="imageState" (started)="onDragBegin(lightBoxImage)" (stopped)="onDragEnd(lightBoxImage)" draggable="false" imageZoom [allowZoom]="isMagnifyEnabled" *ngIf="images.length>0" [src]="images[curImageIndex][asImage]" class="lightbox-img" (load)="onLoad()"  />
+    </div>
+    <span [hidden]="!loading" *ngIf="images.length>0" class="lightbox-loading"><i class="fa fa-spinner fa-spin fa-3x" aria-hidden="true"></i></span>
+    <span class="lightbox-count">{{curImageIndex+1}}/{{images.length}}</span>
+    <div class="thumbnails">
+        <a class="thumbnails-nav-left thumbnails-nav" [ngClass]="{'non-visible': curThumbnailIndex < 4 }" (click)="thumbnailsPrevious()"><i class="fa fa-angle-left"></i></a>
+         <span title="select all" class="icon-check-circle" [ngClass]="{'checked':isAllSelected}"  (click)="selectAll(index)"></span>
+        <ng-template ngFor let-image [ngForOf]="images" let-index="index">
+            <div *ngIf="(curThumbnailIndex>images.length-4 && index > images.length-8)||(curThumbnailIndex<4 && index < 7)||(index >= curThumbnailIndex -3) && (index <= curThumbnailIndex+3)" [ngClass]="{'active':curImageIndex===index}"
+                class="thumbnail rounded-circle">
+              <span class="icon-check-circle" [ngClass]="{'checked':image?.isSelected}"  (click)="imageChecked(index)"></span>
+            <img [src]="image[asThumbnail]"  [ngClass]="{'active':curImageIndex===index}" class="thumbnail-image" (click)="toImage(index)">
+            </div>
+        </ng-template>
+        <a class="thumbnails-nav-right thumbnails-nav" [ngClass]="{'non-visible': curThumbnailIndex > images.length-5 }" (click)="thumbnailsNext()"><i class="fa fa-angle-right"></i></a>
+    </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

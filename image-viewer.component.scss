@@ -1,0 +1,209 @@
+.image-gallery-container {
+    overflow: hidden;
+    min-width: 1100px;
+    min-height: 770px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    display: inline-block;
+    z-index: 5;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    background-color: #dddddd;
+    .image-gallery-lightbox {
+        position: relative;
+        z-index: 6;
+        text-align: center;
+        .lightbox-close {
+            font-size: 42px;
+            z-index: 10;
+            color: #fff !important;
+            text-decoration: none;
+            margin: 0 30px 0 0;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 0;
+        }
+        .image-view-rss {
+            max-height: 600px;
+            min-width: 900px;
+            
+            .lightbox-img {
+                height: auto;
+                max-height: 600px;
+                max-width: 900px;
+                position: relative;
+                display: block;
+                margin: 0 auto 0 auto;
+                z-index: 4;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                -webkit-user-drag: none;
+                &.ng-draggable {
+                  cursor: move;
+                 }
+            }
+        }
+        .lightbox-loading {
+            position: relative;
+            display: block;
+            margin: 0 auto 0 auto;
+            top: 45%;
+            z-index: 8;
+            color: #fff;
+        }
+        .lightbox-text {
+            color: #fff;
+            display: inline-block;
+            width: 90%;
+            margin: 2%;
+            height: 30px;
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 15px;
+        }
+        .lightbox-count {
+            color: #345b7a;
+            display: inline-block;
+            width: 100%;
+            height: 20px;
+            text-align: center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+        }
+        .thumbnails {
+            z-index: 15;
+            display: inline-block;
+            margin: 2% 5%;
+            text-align: center;
+            position: relative;
+            left: 0;
+            bottom:0px;
+            .icon-check-circle {
+                z-index: 20;
+                display: inline-block;
+                vertical-align: top;
+                color: #b0b0b0;
+                margin-right: 10px;
+                &.checked {
+                    color: #569C00;
+                }
+            }
+            .thumbnails-nav-left, .thumbnails-nav-right {
+                position: relative;
+                top: 60px;
+                vertical-align: top;
+                right: 0;
+                &.thumbnails-nav {
+                    position: relative;
+                    height: auto;
+                    width: auto;
+                    display: inline-block;
+                    &.non-visible {
+                        visibility: hidden;
+                    }
+                    i {
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        transform: none;
+                        margin: 0 20px;
+                        vertical-align: middle;
+                        font-size: 60px;
+                        color: #fff !important;
+                        text-decoration: none;
+                        font-size: 80px;
+                        right: 30px;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        &.fa {
+                            position: relative;
+                            top: 1px;
+                            display: inline-block;
+                            font-family: 'Glyphicons Halflings';
+                            font-style: normal;
+                            font-weight: 400;
+                            font-size: 20px;
+                            line-height: 1;
+                            -webkit-font-smoothing: antialiased;
+                            &.fa-angle-left {
+                                &:before {
+                                    content: "\e079";
+                                }
+                            }
+                            &.fa-angle-right {
+                                &:before {
+                                    content: "\e080";
+                                }
+                            }
+                            &:before {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                    background: inherit;
+                }
+            }
+            .thumbnail {
+                position: relative;
+                display: inline-block;
+                padding: 4px;
+                max-width: 100px;
+                max-height: 110px;
+                margin-right: 5px;
+                border: 1px solid #9bc2e6;
+                &.active {
+                    border: 2px solid #9bc2e6;
+                    opacity: 1;
+                }
+                .thumbnail-image {
+                    max-width: 100px;
+                    max-height: 100px;
+                    opacity: 0.6;
+                    &.active {
+                    opacity: 1;
+                }
+                &:hover {
+                    opacity: 1;
+                    cursor: pointer;
+                }
+                }
+                .icon-check-circle {
+                            position: absolute;
+                            top: 2px;
+                            left: 2px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
